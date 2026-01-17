@@ -1,0 +1,48 @@
+######################################
+# Provider (AWS)
+######################################
+
+aws_access_key = "<aws_access_key>"     # add
+aws_secret_key = "<aws_secret_key>"     # add
+aws_region     = "<aws_region>"         # add
+
+
+######################################
+# S3 Bucket
+######################################
+
+aws_s3_bucket_name        = "{{aws_s3_bucket_name}}"
+env_for_aws_s3_bucket     = "{{env_for_aws_s3_bucket}}"
+aws_s3_bucket_notification_name = "{{aws_s3_bucket_notification_name}}"
+
+
+######################################
+# Lambda
+######################################
+
+lambda_function_name        = "{{lambda_function_name}}"
+lambda_iam_role_name       = "{{lambda_iam_role_name}}"
+lambda_policy_name         = "{{lambda_policy_name}}"
+lambda_policy_attachment_name = "{{lambda_policy_attachment_name}}"
+lambda_log_group_name      = "{{lambda_log_group_name}}"
+
+lambda_runtime      = "provided.al2"
+lambda_handler      = "bootstrap"
+lambda_filename     = "lambda.zip"
+lambda_memory_size  = 1024
+lambda_timeout      = 900
+
+######################################
+# Lambda Environment Variables
+######################################
+
+dynamo_table = "{{dynamo_table}}"
+workers      = "{{workers}}"
+batch_size   = "{{batch_size}}"
+buffer_size  = "{{buffer_size}}"
+
+######################################
+# Logs
+######################################
+
+log_retention_days = 14
