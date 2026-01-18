@@ -10,9 +10,12 @@ import java.io.*;
 import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 @Service
 public class Tools {
@@ -35,43 +38,53 @@ public class Tools {
                 .toString();
     }
 
-    /* =========================
-       TEMPLATE ENGINE DO MCP
-       ========================= */
-    private void processTemplates(String outputPath, String templateDir, Map<String, String> variables) throws IOException {
-        Path templatesRoot = Paths.get(templateDir);
+    /*
+     * =========================
+     * TEMPLATE ENGINE DO MCP
+     * =========================
+     */
+    private void processTemplates(String targetPath, String templatesPath, Map<String, String> variables)
+            throws IOException {
 
-        List<Path> templates = Files.walk(templatesRoot)
-                .filter(p -> p.toString().endsWith(".tf.template"))
-                .collect(Collectors.toList());
+        Files.createDirectories(Paths.get(targetPath));
 
-        for (Path templateFile : templates) {
-            String content = Files.readString(templateFile);
+        try (Stream<Path> paths = Files.walk(Paths.get(templatesPath))) {
+            paths.filter(Files::isRegularFile).forEach(templateFile -> {
+                try {
+                    String content = Files.readString(templateFile);
 
-            for (var entry : variables.entrySet()) {
-                content = content.replace("{{" + entry.getKey() + "}}", entry.getValue());
-            }
+                    for (Map.Entry<String, String> entry : variables.entrySet()) {
+                        content = content.replace("{{" + entry.getKey() + "}}", entry.getValue());
+                    }
 
-            String relative = templatesRoot.relativize(templateFile).toString();
-            String outputFileName = relative.replace(".template", "");
+                    String fileName = templateFile.getFileName().toString();
 
-            Path outputFile = Paths.get(outputPath, outputFileName);
-            Files.createDirectories(outputFile.getParent());
-            Files.writeString(outputFile, content);
+                    if (fileName.endsWith(".template")) {
+                        fileName = fileName.replace(".template", "");
+                    }
 
-            logger.info("Generated: " + outputFile);
+                    Path outputFile = Paths.get(targetPath, fileName);
+                    Files.writeString(outputFile, content);
+
+                    logger.info("Generated: " + outputFile);
+                } catch (IOException e) {
+                    throw new RuntimeException("Erro ao processar template: " + templateFile, e);
+                }
+            });
         }
     }
 
-    /* =========================
-       TOOL PRINCIPAL
-       ========================= */
+    /*
+     * =========================
+     * TOOL PRINCIPAL
+     * =========================
+     */
     @Tool(name = "create_s3_lambda_aws", description = "Create an AWS S3 bucket with a Lambda triggered on each upload")
     public String createS3LambdaAws(
             @ToolParam(description = "S3 bucket name") String bucketName,
             @ToolParam(description = "Lambda function name") String lambdaFunctionName,
             @ToolParam(description = "Environment (e.g. dev, prod)") String environment,
-            @ToolParam(description = "AWS region") String region) throws IOException {
+            @ToolParam(description = "AWS region") String region) {
 
         Map<String, String> variables = new HashMap<>();
         variables.put("aws_region", region);
@@ -79,25 +92,68 @@ public class Tools {
         variables.put("bucket_resource_name", bucketName.replace("-", "_"));
         variables.put("lambda_function_name", lambdaFunctionName);
         variables.put("lambda_resource_name", lambdaFunctionName.replace("-", "_"));
-        variables.put("lambda_role_name", lambdaFunctionName + "_role");
+        variables.put("lambda_role_name", lambdaFunctionName + "-role");
+        variables.put("lambda_role_resource_name", (lambdaFunctionName + "_role").replace("-", "_"));
+        variables.put("lambda_basic_policy_attach",
+                lambdaFunctionName.replace("-", "_") + "_basic_attach");
         variables.put("environment", environment);
         variables.put("lambda_zip_path", "lambda.zip");
 
         String resolvedTemplatesPath = templatesPath + "/aws";
         String terraformPath = basePath + bucketName;
 
-        processTemplates(terraformPath, resolvedTemplatesPath, variables);
+        CompletableFuture.runAsync(() -> {
+            try {
+                logger.info("Starting provisioning for bucket: " + bucketName);
 
-        runTerraform(terraformPath, "init");
-        runTerraform(terraformPath, "plan");
-        runTerraform(terraformPath, "apply", "-auto-approve");
+                processTemplates(terraformPath, resolvedTemplatesPath, variables);
+                writeTfVars(terraformPath, variables);
 
-        return "AWS S3 + Lambda provisioned successfully for bucket: " + bucketName;
+                createLambdaHandler(terraformPath);
+                zipLambda(terraformPath);
+
+                runTerraform(terraformPath, "init");
+                runTerraform(terraformPath, "plan", "-input=false");
+                runTerraform(terraformPath, "apply", "-auto-approve", "-input=false");
+
+                logger.info("✅ Provisioning completed for bucket: " + bucketName);
+
+            } catch (Exception e) {
+                logger.log(Level.SEVERE, "❌ Provisioning failed for bucket: " + bucketName, e);
+            }
+        });
+
+        return "Provisioning started for bucket: " + bucketName +
+                ". You can follow progress in the MCP Server logs.";
     }
 
-    /* =========================
-       EXECUÇÃO TERRAFORM
-       ========================= */
+        /*
+     * =================================
+     * CRIACÃO DO ARQUIVO .TF PARA VARS
+     * =================================
+     */
+    private void writeTfVars(String targetPath, Map<String, String> variables) throws IOException {
+        String tfvars = String.format("""
+                aws_region = "%s"
+                bucket_name = "%s"
+                environment = "%s"
+                lambda_function_name = "%s"
+                lambda_zip_path = "%s"
+                """,
+                variables.get("aws_region"),
+                variables.get("bucket_name"),
+                variables.get("environment"),
+                variables.get("lambda_function_name"),
+                variables.get("lambda_zip_path"));
+
+        Files.writeString(Paths.get(targetPath, "terraform.tfvars"), tfvars);
+    }
+
+    /*
+     * =========================
+     * EXECUÇÃO TERRAFORM
+     * =========================
+     */
     private void runTerraform(String directory, String... args) {
         try {
             List<String> command = new ArrayList<>();
@@ -124,9 +180,11 @@ public class Tools {
         }
     }
 
-    /* =========================
-       DESTRUIR
-       ========================= */
+    /*
+     * =========================
+     * DESTRUIR
+     * =========================
+     */
     @Tool(name = "delete_s3_lambda_aws", description = "Destroy an AWS S3 + Lambda integration")
     public String deleteS3LambdaAws(
             @ToolParam(description = "S3 bucket name") String bucketName) {
@@ -145,5 +203,47 @@ public class Tools {
         }
 
         return "AWS S3 + Lambda destroyed for bucket: " + bucketName;
+    }
+
+        /*
+     * =========================
+     * HANDLER PARA LAMBDA
+     * =========================
+     */
+    private void createLambdaHandler(String terraformPath) throws IOException {
+        String handlerCode = """
+                import json
+
+                def lambda_handler(event, context):
+                    print("Evento recebido do S3:")
+                    print(json.dumps(event))
+                    return {
+                        "statusCode": 200,
+                        "body": "Arquivo processado com sucesso!"
+                    }
+                """;
+
+        Path handlerPath = Paths.get(terraformPath, "handler.py");
+        Files.writeString(handlerPath, handlerCode);
+        logger.info("Lambda handler criado em: " + handlerPath);
+    }
+
+        /*
+     * =========================
+     * METODO ZIP DA LAMBDA
+     * =========================
+     */
+
+    private void zipLambda(String terraformPath) throws IOException {
+        Path zipPath = Paths.get(terraformPath, "lambda.zip");
+        Path handlerPath = Paths.get(terraformPath, "handler.py");
+
+        try (ZipOutputStream zos = new ZipOutputStream(Files.newOutputStream(zipPath))) {
+            zos.putNextEntry(new ZipEntry("handler.py"));
+            Files.copy(handlerPath, zos);
+            zos.closeEntry();
+        }
+
+        logger.info("Lambda zip criado em: " + zipPath);
     }
 }

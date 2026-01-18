@@ -1,0 +1,5 @@
+aws_region = "us-east-1"
+bucket_name = "mcp-s3-bucket"
+environment = "dev"
+lambda_function_name = "mcp-s3-bucket-lambda"
+lambda_zip_path = "lambda.zip"

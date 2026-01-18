@@ -12,3 +12,4 @@
 1768703148339:chat provisione um bucket aws chamado mcp-bucket-s3 em prod e us-east-1
 1768703204204:chat agora tambem provisione uma lambda para ser acionada a cada upload nesse bucket
 1768703262745:chat modifique a politica da lambda para que seja publica
+1768747420586:chat crie um bucket chamado mcp-s3-bucket em dev e em us-east-1
