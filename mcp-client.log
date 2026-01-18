@@ -4,3 +4,11 @@
 1768688469406:help
 1768688496548:chat qual a capital de sergipe?
 1768688518266:clear
+1768698865786:chat provisione uma lambda basica usando os templates em terraform
+1768699019431:clear
+1768700528208:chat crie um bucket emd chamado mcp-s3-bucket em us-east-1
+1768700624814:chat crie um bucket chamado mcp-s3-bucket em prod e em us-east-1
+1768702877416:chat provisione um bucket na aws chamado mcp-s3-bucket em prod e em us-east-1
+1768703148339:chat provisione um bucket aws chamado mcp-bucket-s3 em prod e us-east-1
+1768703204204:chat agora tambem provisione uma lambda para ser acionada a cada upload nesse bucket
+1768703262745:chat modifique a politica da lambda para que seja publica

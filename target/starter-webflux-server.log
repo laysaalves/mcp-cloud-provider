@@ -21,3 +21,579 @@
 2026-01-17T19:20:02.420-03:00  INFO 17788 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2026-01-17T19:20:02.421-03:00  INFO 17788 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2026-01-17T19:20:02.543-03:00  INFO 17788 --- [mcp-server] [http-nio-8181-exec-2] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T22:13:03.303-03:00  INFO 9884 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Starting McpServerApplication using Java 21.0.9 with PID 9884 (C:\Users\Laysa\Desktop\mcp-cloud\mcp-server\target\classes started by Laysa in C:\Users\Laysa\Desktop\mcp-cloud)
+2026-01-17T22:13:03.311-03:00  INFO 9884 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T22:13:03.981-03:00  WARN 9884 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:13:03.983-03:00  WARN 9884 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:13:03.993-03:00  WARN 9884 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:13:04.218-03:00  INFO 9884 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8181 (http)
+2026-01-17T22:13:04.234-03:00  INFO 9884 --- [mcp-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T22:13:04.234-03:00  INFO 9884 --- [mcp-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-17T22:13:04.289-03:00  INFO 9884 --- [mcp-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T22:13:04.289-03:00  INFO 9884 --- [mcp-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 937 ms
+2026-01-17T22:13:04.901-03:00  WARN 9884 --- [mcp-server] [main] o.s.m.provider.tool.SyncMcpToolProvider  : No tool methods found in the provided tool objects: []
+2026-01-17T22:13:04.917-03:00  INFO 9884 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-01-17T22:13:04.919-03:00  INFO 9884 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 3
+2026-01-17T22:13:04.919-03:00  INFO 9884 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-01-17T22:13:04.920-03:00  INFO 9884 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-01-17T22:13:04.921-03:00  INFO 9884 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-01-17T22:13:04.921-03:00  INFO 9884 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-01-17T22:13:05.045-03:00  INFO 9884 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8181 (http) with context path '/'
+2026-01-17T22:13:05.054-03:00  INFO 9884 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Started McpServerApplication in 2.166 seconds (process running for 2.455)
+2026-01-17T22:13:29.430-03:00  INFO 9884 --- [mcp-server] [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-17T22:13:29.430-03:00  INFO 9884 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-17T22:13:29.431-03:00  INFO 9884 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-17T22:13:29.555-03:00  INFO 9884 --- [mcp-server] [http-nio-8181-exec-2] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T22:15:25.187-03:00  INFO 9884 --- [mcp-server] [http-nio-8181-exec-8] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T22:38:52.229-03:00  INFO 10984 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Starting McpServerApplication using Java 21.0.9 with PID 10984 (C:\Users\Laysa\Desktop\mcp-cloud\mcp-server\target\classes started by Laysa in C:\Users\Laysa\Desktop\mcp-cloud)
+2026-01-17T22:38:52.231-03:00  INFO 10984 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T22:38:52.949-03:00  WARN 10984 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:38:52.950-03:00  WARN 10984 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:38:52.960-03:00  WARN 10984 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:38:53.194-03:00  INFO 10984 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8181 (http)
+2026-01-17T22:38:53.206-03:00  INFO 10984 --- [mcp-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T22:38:53.208-03:00  INFO 10984 --- [mcp-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-17T22:38:53.263-03:00  INFO 10984 --- [mcp-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T22:38:53.264-03:00  INFO 10984 --- [mcp-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 984 ms
+2026-01-17T22:38:53.867-03:00  WARN 10984 --- [mcp-server] [main] o.s.m.provider.tool.SyncMcpToolProvider  : No tool methods found in the provided tool objects: []
+2026-01-17T22:38:53.879-03:00  INFO 10984 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-01-17T22:38:53.881-03:00  INFO 10984 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 3
+2026-01-17T22:38:53.881-03:00  INFO 10984 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-01-17T22:38:53.882-03:00  INFO 10984 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-01-17T22:38:53.883-03:00  INFO 10984 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-01-17T22:38:53.883-03:00  INFO 10984 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-01-17T22:38:54.025-03:00  INFO 10984 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8181 (http) with context path '/'
+2026-01-17T22:38:54.036-03:00  INFO 10984 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Started McpServerApplication in 2.239 seconds (process running for 2.536)
+2026-01-17T22:39:20.158-03:00  INFO 10984 --- [mcp-server] [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-17T22:39:20.159-03:00  INFO 10984 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-17T22:39:20.160-03:00  INFO 10984 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-17T22:39:20.284-03:00  INFO 10984 --- [mcp-server] [http-nio-8181-exec-2] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T22:40:38.557-03:00  INFO 10984 --- [mcp-server] [http-nio-8181-exec-9] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T22:42:50.325-03:00  INFO 10648 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Starting McpServerApplication using Java 21.0.9 with PID 10648 (C:\Users\Laysa\Desktop\mcp-cloud\mcp-server\target\classes started by Laysa in C:\Users\Laysa\Desktop\mcp-cloud)
+2026-01-17T22:42:50.329-03:00  INFO 10648 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T22:42:51.023-03:00  WARN 10648 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:42:51.025-03:00  WARN 10648 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:42:51.035-03:00  WARN 10648 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:42:51.280-03:00  INFO 10648 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8181 (http)
+2026-01-17T22:42:51.294-03:00  INFO 10648 --- [mcp-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T22:42:51.294-03:00  INFO 10648 --- [mcp-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-17T22:42:51.346-03:00  INFO 10648 --- [mcp-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T22:42:51.347-03:00  INFO 10648 --- [mcp-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 979 ms
+2026-01-17T22:42:51.924-03:00  WARN 10648 --- [mcp-server] [main] o.s.m.provider.tool.SyncMcpToolProvider  : No tool methods found in the provided tool objects: []
+2026-01-17T22:42:51.938-03:00  INFO 10648 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-01-17T22:42:51.940-03:00  INFO 10648 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 3
+2026-01-17T22:42:51.941-03:00  INFO 10648 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-01-17T22:42:51.941-03:00  INFO 10648 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-01-17T22:42:51.942-03:00  INFO 10648 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-01-17T22:42:51.943-03:00  INFO 10648 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-01-17T22:42:52.061-03:00  INFO 10648 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8181 (http) with context path '/'
+2026-01-17T22:42:52.071-03:00  INFO 10648 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Started McpServerApplication in 2.181 seconds (process running for 2.473)
+2026-01-17T22:43:12.191-03:00  INFO 10648 --- [mcp-server] [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-17T22:43:12.191-03:00  INFO 10648 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-17T22:43:12.191-03:00  INFO 10648 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-01-17T22:43:12.321-03:00  INFO 10648 --- [mcp-server] [http-nio-8181-exec-2] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T22:46:25.581-03:00  INFO 15980 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Starting McpServerApplication using Java 21.0.9 with PID 15980 (C:\Users\Laysa\Desktop\mcp-cloud\mcp-server\target\classes started by Laysa in C:\Users\Laysa\Desktop\mcp-cloud)
+2026-01-17T22:46:25.584-03:00  INFO 15980 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T22:46:26.274-03:00  WARN 15980 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:46:26.276-03:00  WARN 15980 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:46:26.286-03:00  WARN 15980 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:46:26.496-03:00  INFO 15980 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8181 (http)
+2026-01-17T22:46:26.508-03:00  INFO 15980 --- [mcp-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T22:46:26.509-03:00  INFO 15980 --- [mcp-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-17T22:46:26.559-03:00  INFO 15980 --- [mcp-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T22:46:26.560-03:00  INFO 15980 --- [mcp-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 933 ms
+2026-01-17T22:46:27.093-03:00  WARN 15980 --- [mcp-server] [main] o.s.m.provider.tool.SyncMcpToolProvider  : No tool methods found in the provided tool objects: []
+2026-01-17T22:46:27.103-03:00  INFO 15980 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-01-17T22:46:27.105-03:00  INFO 15980 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 3
+2026-01-17T22:46:27.105-03:00  INFO 15980 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-01-17T22:46:27.106-03:00  INFO 15980 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-01-17T22:46:27.107-03:00  INFO 15980 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-01-17T22:46:27.108-03:00  INFO 15980 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-01-17T22:46:27.234-03:00  INFO 15980 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8181 (http) with context path '/'
+2026-01-17T22:46:27.245-03:00  INFO 15980 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Started McpServerApplication in 2.101 seconds (process running for 2.38)
+2026-01-17T22:46:40.846-03:00  INFO 15980 --- [mcp-server] [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-17T22:46:40.847-03:00  INFO 15980 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-17T22:46:40.848-03:00  INFO 15980 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-17T22:46:40.965-03:00  INFO 15980 --- [mcp-server] [http-nio-8181-exec-3] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T22:47:15.930-03:00  INFO 4520 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Starting McpServerApplication using Java 21.0.9 with PID 4520 (C:\Users\Laysa\Desktop\mcp-cloud\mcp-server\target\classes started by Laysa in C:\Users\Laysa\Desktop\mcp-cloud)
+2026-01-17T22:47:15.934-03:00  INFO 4520 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T22:47:16.606-03:00  WARN 4520 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:47:16.608-03:00  WARN 4520 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:47:16.617-03:00  WARN 4520 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:47:16.830-03:00  INFO 4520 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8181 (http)
+2026-01-17T22:47:16.842-03:00  INFO 4520 --- [mcp-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T22:47:16.843-03:00  INFO 4520 --- [mcp-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-17T22:47:16.893-03:00  INFO 4520 --- [mcp-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T22:47:16.894-03:00  INFO 4520 --- [mcp-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 921 ms
+2026-01-17T22:47:17.457-03:00  WARN 4520 --- [mcp-server] [main] o.s.m.provider.tool.SyncMcpToolProvider  : No tool methods found in the provided tool objects: []
+2026-01-17T22:47:17.470-03:00  INFO 4520 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-01-17T22:47:17.472-03:00  INFO 4520 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 3
+2026-01-17T22:47:17.472-03:00  INFO 4520 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-01-17T22:47:17.473-03:00  INFO 4520 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-01-17T22:47:17.473-03:00  INFO 4520 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-01-17T22:47:17.474-03:00  INFO 4520 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-01-17T22:47:17.616-03:00  INFO 4520 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8181 (http) with context path '/'
+2026-01-17T22:47:17.628-03:00  INFO 4520 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Started McpServerApplication in 2.132 seconds (process running for 2.397)
+2026-01-17T22:47:47.610-03:00  INFO 4520 --- [mcp-server] [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-17T22:47:47.610-03:00  INFO 4520 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-17T22:47:47.613-03:00  INFO 4520 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-01-17T22:47:47.716-03:00  INFO 4520 --- [mcp-server] [http-nio-8181-exec-2] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T22:49:38.944-03:00  INFO 6788 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Starting McpServerApplication using Java 21.0.9 with PID 6788 (C:\Users\Laysa\Desktop\mcp-cloud\mcp-server\target\classes started by Laysa in C:\Users\Laysa\Desktop\mcp-cloud)
+2026-01-17T22:49:38.947-03:00  INFO 6788 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T22:49:39.697-03:00  WARN 6788 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:49:39.699-03:00  WARN 6788 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:49:39.709-03:00  WARN 6788 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T22:49:39.927-03:00  INFO 6788 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8181 (http)
+2026-01-17T22:49:39.939-03:00  INFO 6788 --- [mcp-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T22:49:39.940-03:00  INFO 6788 --- [mcp-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-17T22:49:39.990-03:00  INFO 6788 --- [mcp-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T22:49:39.991-03:00  INFO 6788 --- [mcp-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 999 ms
+2026-01-17T22:49:40.575-03:00  WARN 6788 --- [mcp-server] [main] o.s.m.provider.tool.SyncMcpToolProvider  : No tool methods found in the provided tool objects: []
+2026-01-17T22:49:40.587-03:00  INFO 6788 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-01-17T22:49:40.589-03:00  INFO 6788 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 3
+2026-01-17T22:49:40.589-03:00  INFO 6788 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-01-17T22:49:40.590-03:00  INFO 6788 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-01-17T22:49:40.591-03:00  INFO 6788 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-01-17T22:49:40.592-03:00  INFO 6788 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-01-17T22:49:40.719-03:00  INFO 6788 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8181 (http) with context path '/'
+2026-01-17T22:49:40.730-03:00  INFO 6788 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Started McpServerApplication in 2.217 seconds (process running for 2.488)
+2026-01-17T22:49:50.531-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-17T22:49:50.532-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-17T22:49:50.533-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-17T22:49:50.647-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-2] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T22:49:58.347-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\bucket.tf
+2026-01-17T22:49:58.347-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\iam.tf
+2026-01-17T22:49:58.347-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\lambda.tf
+2026-01-17T22:49:58.347-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\notification.tf
+2026-01-17T22:49:58.347-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\provider.tf
+2026-01-17T22:49:58.357-03:00  INFO 6788 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\variables.tf
+2026-01-17T22:49:58.358-03:00 ERROR 6788 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Terraform execution failed
+
+java.io.IOException: Cannot run program "/usr/bin/terraform" (in directory ".\terraform\templates\awsmcp-s3-bucket"): CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at dev.layseiras.mcp_server.service.Tools.runTerraform(Tools.java:111) ~[classes/:na]
+	at dev.layseiras.mcp_server.service.Tools.createS3LambdaAws(Tools.java:91) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.ai.tool.method.MethodToolCallback.callMethod(MethodToolCallback.java:185) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.tool.method.MethodToolCallback.call(MethodToolCallback.java:112) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSharedSyncToolSpecification$5(McpToolUtils.java:260) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSyncToolSpecification$3(McpToolUtils.java:208) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at io.modelcontextprotocol.server.McpServerFeatures$AsyncToolSpecification.lambda$fromSync$3(McpServerFeatures.java:260) ~[mcp-core-0.17.0.jar:0.17.0]
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:146) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Operators$MonoInnerProducerBase.complete(Operators.java:2834) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.SinkOneMulticast.subscribe(SinkOneMulticast.java:101) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.block(Mono.java:1778) ~[reactor-core-3.7.14.jar:3.7.14]
+	at io.modelcontextprotocol.server.transport.WebMvcSseServerTransportProvider.handleMessage(WebMvcSseServerTransportProvider.java:334) ~[mcp-spring-webmvc-0.17.0.jar:0.17.0]
+	at org.springframework.web.servlet.function.support.HandlerFunctionAdapter.handle(HandlerFunctionAdapter.java:108) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: java.io.IOException: CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessImpl.create(Native Method) ~[na:na]
+	at java.base/java.lang.ProcessImpl.<init>(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessImpl.start(Unknown Source) ~[na:na]
+	... 63 common frames omitted
+
+2026-01-17T23:20:31.512-03:00  INFO 15684 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Starting McpServerApplication using Java 21.0.9 with PID 15684 (C:\Users\Laysa\Desktop\mcp-cloud\mcp-server\target\classes started by Laysa in C:\Users\Laysa\Desktop\mcp-cloud)
+2026-01-17T23:20:31.525-03:00  INFO 15684 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T23:20:32.217-03:00  WARN 15684 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T23:20:32.219-03:00  WARN 15684 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T23:20:32.230-03:00  WARN 15684 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T23:20:32.446-03:00  INFO 15684 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8181 (http)
+2026-01-17T23:20:32.459-03:00  INFO 15684 --- [mcp-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T23:20:32.460-03:00  INFO 15684 --- [mcp-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-17T23:20:32.511-03:00  INFO 15684 --- [mcp-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T23:20:32.512-03:00  INFO 15684 --- [mcp-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 946 ms
+2026-01-17T23:20:33.086-03:00  WARN 15684 --- [mcp-server] [main] o.s.m.provider.tool.SyncMcpToolProvider  : No tool methods found in the provided tool objects: []
+2026-01-17T23:20:33.099-03:00  INFO 15684 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-01-17T23:20:33.102-03:00  INFO 15684 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 3
+2026-01-17T23:20:33.102-03:00  INFO 15684 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-01-17T23:20:33.103-03:00  INFO 15684 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-01-17T23:20:33.104-03:00  INFO 15684 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-01-17T23:20:33.105-03:00  INFO 15684 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-01-17T23:20:33.248-03:00  INFO 15684 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8181 (http) with context path '/'
+2026-01-17T23:20:33.260-03:00  INFO 15684 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Started McpServerApplication in 2.171 seconds (process running for 2.454)
+2026-01-17T23:20:39.043-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-17T23:20:39.044-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-17T23:20:39.045-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-01-17T23:20:39.162-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-3] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T23:21:19.291-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\bucket.tf
+2026-01-17T23:21:19.293-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\iam.tf
+2026-01-17T23:21:19.294-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\lambda.tf
+2026-01-17T23:21:19.295-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\notification.tf
+2026-01-17T23:21:19.296-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\provider.tf
+2026-01-17T23:21:19.297-03:00  INFO 15684 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\templates\awsmcp-s3-bucket\variables.tf
+2026-01-17T23:21:19.298-03:00 ERROR 15684 --- [mcp-server] [http-nio-8181-exec-6] dev.layseiras.mcp_server.service.Tools   : Terraform execution failed
+
+java.io.IOException: Cannot run program "/terraform" (in directory ".\terraform\templates\awsmcp-s3-bucket"): CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at dev.layseiras.mcp_server.service.Tools.runTerraform(Tools.java:111) ~[classes/:na]
+	at dev.layseiras.mcp_server.service.Tools.createS3LambdaAws(Tools.java:91) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.ai.tool.method.MethodToolCallback.callMethod(MethodToolCallback.java:185) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.tool.method.MethodToolCallback.call(MethodToolCallback.java:112) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSharedSyncToolSpecification$5(McpToolUtils.java:260) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSyncToolSpecification$3(McpToolUtils.java:208) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at io.modelcontextprotocol.server.McpServerFeatures$AsyncToolSpecification.lambda$fromSync$3(McpServerFeatures.java:260) ~[mcp-core-0.17.0.jar:0.17.0]
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:146) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Operators$MonoInnerProducerBase.complete(Operators.java:2834) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.SinkOneMulticast.subscribe(SinkOneMulticast.java:101) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.block(Mono.java:1778) ~[reactor-core-3.7.14.jar:3.7.14]
+	at io.modelcontextprotocol.server.transport.WebMvcSseServerTransportProvider.handleMessage(WebMvcSseServerTransportProvider.java:334) ~[mcp-spring-webmvc-0.17.0.jar:0.17.0]
+	at org.springframework.web.servlet.function.support.HandlerFunctionAdapter.handle(HandlerFunctionAdapter.java:108) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: java.io.IOException: CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessImpl.create(Native Method) ~[na:na]
+	at java.base/java.lang.ProcessImpl.<init>(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessImpl.start(Unknown Source) ~[na:na]
+	... 63 common frames omitted
+
+2026-01-17T23:24:28.545-03:00  INFO 13724 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Starting McpServerApplication using Java 21.0.9 with PID 13724 (C:\Users\Laysa\Desktop\mcp-cloud\mcp-server\target\classes started by Laysa in C:\Users\Laysa\Desktop\mcp-cloud)
+2026-01-17T23:24:28.549-03:00  INFO 13724 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T23:24:29.224-03:00  WARN 13724 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T23:24:29.226-03:00  WARN 13724 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T23:24:29.236-03:00  WARN 13724 --- [mcp-server] [main] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-01-17T23:24:29.468-03:00  INFO 13724 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8181 (http)
+2026-01-17T23:24:29.481-03:00  INFO 13724 --- [mcp-server] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T23:24:29.482-03:00  INFO 13724 --- [mcp-server] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.50]
+2026-01-17T23:24:29.535-03:00  INFO 13724 --- [mcp-server] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T23:24:29.535-03:00  INFO 13724 --- [mcp-server] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 941 ms
+2026-01-17T23:24:30.121-03:00  WARN 13724 --- [mcp-server] [main] o.s.m.provider.tool.SyncMcpToolProvider  : No tool methods found in the provided tool objects: []
+2026-01-17T23:24:30.128-03:00  INFO 13724 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-01-17T23:24:30.134-03:00  INFO 13724 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 3
+2026-01-17T23:24:30.135-03:00  INFO 13724 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources capabilities, notification: true
+2026-01-17T23:24:30.136-03:00  INFO 13724 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable resources templates capabilities, notification: true
+2026-01-17T23:24:30.136-03:00  INFO 13724 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable prompts capabilities, notification: true
+2026-01-17T23:24:30.137-03:00  INFO 13724 --- [mcp-server] [main] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable completions capabilities
+2026-01-17T23:24:30.256-03:00  INFO 13724 --- [mcp-server] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8181 (http) with context path '/'
+2026-01-17T23:24:30.258-03:00  INFO 13724 --- [mcp-server] [main] d.l.mcp_server.McpServerApplication      : Started McpServerApplication in 2.172 seconds (process running for 2.458)
+2026-01-17T23:24:36.255-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-17T23:24:36.255-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-17T23:24:36.255-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-01-17T23:24:36.373-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-3] i.m.server.McpAsyncServer                : Client initialize request - Protocol: 2024-11-05, Capabilities: ClientCapabilities[experimental=null, roots=null, sampling=null, elicitation=null], Info: Implementation[name=spring-ai-mcp-client - server1, title=null, version=1.0.0]
+2026-01-17T23:25:49.983-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-7] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\bucket.tf
+2026-01-17T23:25:49.983-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-7] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\iam.tf
+2026-01-17T23:25:49.983-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-7] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\lambda.tf
+2026-01-17T23:25:49.983-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-7] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\notification.tf
+2026-01-17T23:25:49.983-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-7] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\provider.tf
+2026-01-17T23:25:49.989-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-7] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\variables.tf
+2026-01-17T23:25:49.990-03:00 ERROR 13724 --- [mcp-server] [http-nio-8181-exec-7] dev.layseiras.mcp_server.service.Tools   : Terraform execution failed
+
+java.io.IOException: Cannot run program "/terraform" (in directory ".\terraform\mcp-bucket-s3"): CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at dev.layseiras.mcp_server.service.Tools.runTerraform(Tools.java:111) ~[classes/:na]
+	at dev.layseiras.mcp_server.service.Tools.createS3LambdaAws(Tools.java:91) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.ai.tool.method.MethodToolCallback.callMethod(MethodToolCallback.java:185) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.tool.method.MethodToolCallback.call(MethodToolCallback.java:112) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSharedSyncToolSpecification$5(McpToolUtils.java:260) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSyncToolSpecification$3(McpToolUtils.java:208) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at io.modelcontextprotocol.server.McpServerFeatures$AsyncToolSpecification.lambda$fromSync$3(McpServerFeatures.java:260) ~[mcp-core-0.17.0.jar:0.17.0]
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:146) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Operators$MonoInnerProducerBase.complete(Operators.java:2834) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.SinkOneMulticast.subscribe(SinkOneMulticast.java:101) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.block(Mono.java:1778) ~[reactor-core-3.7.14.jar:3.7.14]
+	at io.modelcontextprotocol.server.transport.WebMvcSseServerTransportProvider.handleMessage(WebMvcSseServerTransportProvider.java:334) ~[mcp-spring-webmvc-0.17.0.jar:0.17.0]
+	at org.springframework.web.servlet.function.support.HandlerFunctionAdapter.handle(HandlerFunctionAdapter.java:108) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: java.io.IOException: CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessImpl.create(Native Method) ~[na:na]
+	at java.base/java.lang.ProcessImpl.<init>(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessImpl.start(Unknown Source) ~[na:na]
+	... 63 common frames omitted
+
+2026-01-17T23:26:46.358-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-9] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\bucket.tf
+2026-01-17T23:26:46.359-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-9] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\iam.tf
+2026-01-17T23:26:46.360-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-9] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\lambda.tf
+2026-01-17T23:26:46.362-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-9] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\notification.tf
+2026-01-17T23:26:46.363-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-9] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\provider.tf
+2026-01-17T23:26:46.364-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-9] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\variables.tf
+2026-01-17T23:26:46.364-03:00 ERROR 13724 --- [mcp-server] [http-nio-8181-exec-9] dev.layseiras.mcp_server.service.Tools   : Terraform execution failed
+
+java.io.IOException: Cannot run program "/terraform" (in directory ".\terraform\mcp-bucket-s3"): CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at dev.layseiras.mcp_server.service.Tools.runTerraform(Tools.java:111) ~[classes/:na]
+	at dev.layseiras.mcp_server.service.Tools.createS3LambdaAws(Tools.java:91) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.ai.tool.method.MethodToolCallback.callMethod(MethodToolCallback.java:185) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.tool.method.MethodToolCallback.call(MethodToolCallback.java:112) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSharedSyncToolSpecification$5(McpToolUtils.java:260) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSyncToolSpecification$3(McpToolUtils.java:208) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at io.modelcontextprotocol.server.McpServerFeatures$AsyncToolSpecification.lambda$fromSync$3(McpServerFeatures.java:260) ~[mcp-core-0.17.0.jar:0.17.0]
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:146) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Operators$MonoInnerProducerBase.complete(Operators.java:2834) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.SinkOneMulticast.subscribe(SinkOneMulticast.java:101) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.block(Mono.java:1778) ~[reactor-core-3.7.14.jar:3.7.14]
+	at io.modelcontextprotocol.server.transport.WebMvcSseServerTransportProvider.handleMessage(WebMvcSseServerTransportProvider.java:334) ~[mcp-spring-webmvc-0.17.0.jar:0.17.0]
+	at org.springframework.web.servlet.function.support.HandlerFunctionAdapter.handle(HandlerFunctionAdapter.java:108) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: java.io.IOException: CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessImpl.create(Native Method) ~[na:na]
+	at java.base/java.lang.ProcessImpl.<init>(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessImpl.start(Unknown Source) ~[na:na]
+	... 63 common frames omitted
+
+2026-01-17T23:27:44.744-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-1] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\bucket.tf
+2026-01-17T23:27:44.745-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-1] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\iam.tf
+2026-01-17T23:27:44.746-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-1] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\lambda.tf
+2026-01-17T23:27:44.747-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-1] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\notification.tf
+2026-01-17T23:27:44.748-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-1] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\provider.tf
+2026-01-17T23:27:44.749-03:00  INFO 13724 --- [mcp-server] [http-nio-8181-exec-1] dev.layseiras.mcp_server.service.Tools   : Generated: .\terraform\mcp-bucket-s3\variables.tf
+2026-01-17T23:27:44.750-03:00 ERROR 13724 --- [mcp-server] [http-nio-8181-exec-1] dev.layseiras.mcp_server.service.Tools   : Terraform execution failed
+
+java.io.IOException: Cannot run program "/terraform" (in directory ".\terraform\mcp-bucket-s3"): CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessBuilder.start(Unknown Source) ~[na:na]
+	at dev.layseiras.mcp_server.service.Tools.runTerraform(Tools.java:111) ~[classes/:na]
+	at dev.layseiras.mcp_server.service.Tools.createS3LambdaAws(Tools.java:91) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.springframework.ai.tool.method.MethodToolCallback.callMethod(MethodToolCallback.java:185) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.tool.method.MethodToolCallback.call(MethodToolCallback.java:112) ~[spring-ai-model-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSharedSyncToolSpecification$5(McpToolUtils.java:260) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at org.springframework.ai.mcp.McpToolUtils.lambda$toSyncToolSpecification$3(McpToolUtils.java:208) ~[spring-ai-mcp-1.1.2.jar:1.1.2]
+	at io.modelcontextprotocol.server.McpServerFeatures$AsyncToolSpecification.lambda$fromSync$3(McpServerFeatures.java:260) ~[mcp-core-0.17.0.jar:0.17.0]
+	at reactor.core.publisher.MonoCallable.call(MonoCallable.java:72) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:146) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Operators$MonoInnerProducerBase.complete(Operators.java:2834) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.SinkOneMulticast.subscribe(SinkOneMulticast.java:101) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:76) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.subscribe(Mono.java:4576) ~[reactor-core-3.7.14.jar:3.7.14]
+	at reactor.core.publisher.Mono.block(Mono.java:1778) ~[reactor-core-3.7.14.jar:3.7.14]
+	at io.modelcontextprotocol.server.transport.WebMvcSseServerTransportProvider.handleMessage(WebMvcSseServerTransportProvider.java:334) ~[mcp-spring-webmvc-0.17.0.jar:0.17.0]
+	at org.springframework.web.servlet.function.support.HandlerFunctionAdapter.handle(HandlerFunctionAdapter.java:108) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.15.jar:6.2.15]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.50.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.15.jar:6.2.15]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.50.jar:10.1.50]
+	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+Caused by: java.io.IOException: CreateProcess error=2, O sistema não pode encontrar o arquivo especificado
+	at java.base/java.lang.ProcessImpl.create(Native Method) ~[na:na]
+	at java.base/java.lang.ProcessImpl.<init>(Unknown Source) ~[na:na]
+	at java.base/java.lang.ProcessImpl.start(Unknown Source) ~[na:na]
+	... 63 common frames omitted
+

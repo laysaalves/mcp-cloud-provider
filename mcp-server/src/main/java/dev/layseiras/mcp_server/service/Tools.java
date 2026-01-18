@@ -6,24 +6,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
+import java.io.*;
+import java.nio.file.*;
 import java.time.LocalDateTime;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 @Service
 public class Tools {
+
     private static final Logger logger = Logger.getLogger(Tools.class.getName());
 
     @Value("${mcp.base-path}")
@@ -32,68 +25,85 @@ public class Tools {
     @Value("${mcp.terraform.templates-path}")
     private String templatesPath;
 
-    @Value("${mcp.compartments-file}")
-    private String compartmentsFilePath;
-
     @Value("${terraform.binary.path}")
     private String terraformBinaryPath;
 
     @Tool(name = "get_current_datetime", description = "Get the current date and time in the user's timezone")
     public String getCurrentDatetime() {
-        return LocalDateTime.now().atZone(LocaleContextHolder.getTimeZone().toZoneId()).toString();
+        return LocalDateTime.now()
+                .atZone(LocaleContextHolder.getTimeZone().toZoneId())
+                .toString();
     }
 
-    private void processTemplates(String outputPath, String templatesPath, Map<String, String> variables) throws IOException {
-        Map<String, String> templates = Map.of(
-                "terraform.tfvars", "terraform.tfvars.template",
-                "compute.tf", "compute.tf.template"
-        );
+    /* =========================
+       TEMPLATE ENGINE DO MCP
+       ========================= */
+    private void processTemplates(String outputPath, String templateDir, Map<String, String> variables) throws IOException {
+        Path templatesRoot = Paths.get(templateDir);
 
-        for (var entry : templates.entrySet()) {
-            String outputFile = outputPath + "/" + entry.getKey();
-            String templateFile = templatesPath + entry.getValue();
-            String content = Files.readString(Paths.get(templateFile));
+        List<Path> templates = Files.walk(templatesRoot)
+                .filter(p -> p.toString().endsWith(".tf.template"))
+                .collect(Collectors.toList());
 
-            for (var variable : variables.entrySet()) {
-                content = content.replace("{{" + variable.getKey() + "}}", variable.getValue());
+        for (Path templateFile : templates) {
+            String content = Files.readString(templateFile);
+
+            for (var entry : variables.entrySet()) {
+                content = content.replace("{{" + entry.getKey() + "}}", entry.getValue());
             }
 
-            Files.createDirectories(Paths.get(outputFile).getParent());
-            Files.writeString(Paths.get(outputFile), content);
-        }
+            String relative = templatesRoot.relativize(templateFile).toString();
+            String outputFileName = relative.replace(".template", "");
 
-        List<String> otherFiles = List.of("variables.tf", "provider.tf", "versions.tf");
-        for (String file : otherFiles) {
-            copyFile(templatesPath + file, outputPath + "/" + file);
+            Path outputFile = Paths.get(outputPath, outputFileName);
+            Files.createDirectories(outputFile.getParent());
+            Files.writeString(outputFile, content);
+
+            logger.info("Generated: " + outputFile);
         }
     }
 
+    /* =========================
+       TOOL PRINCIPAL
+       ========================= */
     @Tool(name = "create_s3_lambda_aws", description = "Create an AWS S3 bucket with a Lambda triggered on each upload")
-    public void createS3LambdaAws(
+    public String createS3LambdaAws(
             @ToolParam(description = "S3 bucket name") String bucketName,
-            @ToolParam(description = "Lambda function name") String lambdaName,
-            @ToolParam(description = "Lambda handler (e.g. index.handler)") String handler,
-            @ToolParam(description = "Lambda runtime (e.g. nodejs18.x, python3.11)") String runtime,
+            @ToolParam(description = "Lambda function name") String lambdaFunctionName,
+            @ToolParam(description = "Environment (e.g. dev, prod)") String environment,
             @ToolParam(description = "AWS region") String region) throws IOException {
 
         Map<String, String> variables = new HashMap<>();
         variables.put("aws_region", region);
         variables.put("bucket_name", bucketName);
-        variables.put("lambda_name", lambdaName);
-        variables.put("lambda_handler", handler);
-        variables.put("lambda_runtime", runtime);
+        variables.put("bucket_resource_name", bucketName.replace("-", "_"));
+        variables.put("lambda_function_name", lambdaFunctionName);
+        variables.put("lambda_resource_name", lambdaFunctionName.replace("-", "_"));
+        variables.put("lambda_role_name", lambdaFunctionName + "_role");
+        variables.put("environment", environment);
+        variables.put("lambda_zip_path", "lambda.zip");
 
-        String resolvedTemplatesPath = templatesPath + "aws/s3-lambda/";
-        String terraformPath = basePath + "/Terraform/aws/s3-lambda/" + bucketName;
+        String resolvedTemplatesPath = templatesPath + "/aws";
+        String terraformPath = basePath + bucketName;
 
         processTemplates(terraformPath, resolvedTemplatesPath, variables);
-        runTerraformCommand(terraformPath, List.of(terraformBinaryPath, "init"));
-        runTerraformCommand(terraformPath, List.of(terraformBinaryPath, "plan"));
-        runTerraformCommand(terraformPath, List.of(terraformBinaryPath, "apply", "-auto-approve"));
+
+        runTerraform(terraformPath, "init");
+        runTerraform(terraformPath, "plan");
+        runTerraform(terraformPath, "apply", "-auto-approve");
+
+        return "AWS S3 + Lambda provisioned successfully for bucket: " + bucketName;
     }
 
-    private boolean runTerraformCommand(String directory, List<String> command) {
+    /* =========================
+       EXECUÇÃO TERRAFORM
+       ========================= */
+    private void runTerraform(String directory, String... args) {
         try {
+            List<String> command = new ArrayList<>();
+            command.add(terraformBinaryPath);
+            command.addAll(List.of(args));
+
             ProcessBuilder pb = new ProcessBuilder(command);
             pb.directory(new File(directory));
             pb.redirectErrorStream(true);
@@ -103,37 +113,37 @@ public class Tools {
                 reader.lines().forEach(logger::info);
             }
 
-            return process.waitFor() == 0;
+            int exit = process.waitFor();
+            if (exit != 0) {
+                throw new RuntimeException("Terraform failed with exit code " + exit);
+            }
+
         } catch (Exception e) {
-            logger.log(Level.SEVERE, "Failed to run terraform command: " + command, e);
-            return false;
+            logger.log(Level.SEVERE, "Terraform execution failed", e);
+            throw new RuntimeException(e);
         }
     }
 
-    private void copyFile(String sourcePath, String destinationPath) throws IOException {
-        Path source = Paths.get(sourcePath);
-        Path destination = Paths.get(destinationPath);
-        Files.createDirectories(destination.getParent());
-        Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
-    }
-
+    /* =========================
+       DESTRUIR
+       ========================= */
     @Tool(name = "delete_s3_lambda_aws", description = "Destroy an AWS S3 + Lambda integration")
-    public void deleteS3LambdaAws(
+    public String deleteS3LambdaAws(
             @ToolParam(description = "S3 bucket name") String bucketName) {
 
-        String terraformPath = basePath + "/Terraform/aws/s3-lambda/" + bucketName;
+        String terraformPath = basePath + "/terraform/aws/s3-lambda/" + bucketName;
 
-        boolean success = runTerraformCommand(terraformPath, List.of(terraformBinaryPath, "destroy", "-auto-approve"));
-        if (success) {
-            try {
-                Files.walk(Paths.get(terraformPath))
-                        .sorted(Comparator.reverseOrder())
-                        .map(Path::toFile)
-                        .forEach(File::delete);
-            } catch (IOException e) {
-                logger.warning("Terraform destroy success, but folder not deleted: " + e.getMessage());
-            }
+        runTerraform(terraformPath, "destroy", "-auto-approve");
+
+        try {
+            Files.walk(Paths.get(terraformPath))
+                    .sorted(Comparator.reverseOrder())
+                    .map(Path::toFile)
+                    .forEach(File::delete);
+        } catch (IOException e) {
+            logger.warning("Terraform destroy OK, but folder cleanup failed: " + e.getMessage());
         }
-    }
 
+        return "AWS S3 + Lambda destroyed for bucket: " + bucketName;
+    }
 }
